@@ -1,0 +1,336 @@
+/*Feito por Kalebe Ribeiro Sousa*/
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+void questao1(){
+    int num = 0;
+    puts("Digite um inteiro a ser convertido: ");
+    scanf("%d",&num);
+    printf("Hexadecimal: %#x \n",num);
+    printf("Octal: %o",num);
+}
+void questao2(){
+    float num = 0;
+    puts("Digite um número real: ");
+    scanf("%f",&num);
+    printf("%0.1f",num);
+
+}
+void questao3(){
+    int num = 0;
+    puts("Digite um número inteiro");
+    scanf("%d",&num);
+    printf("Triplo: %d \n", 3*num);
+    printf("Quadrado: %d \n", num*num);
+    printf("Meio: %0.2f \n",num*0.5);
+}
+void questao4(){
+    float num = 0;
+    puts("Digite o valor da conta: ");
+    scanf("%f",&num);
+    printf("Valor final: %f",num * 1.1);
+}
+void questao5(){
+    float altura = 0;
+    char sexo;
+    puts("Digite a sua altura: ");
+    scanf("%f",&altura);
+    puts("Digite se você e homem ou mulher (M ou H)");
+    scanf(" %c",&sexo);
+
+    switch (sexo)
+    {
+    case 'M':
+        printf("Peso: %0.2f", 62.1 * altura - 44.7);
+        break;
+    case 'H':
+        printf("Peso: %0.2f", 72.7 * altura - 58);
+        break;
+    default:
+        printf("Sexo inválido");
+        break;
+    }
+}
+void questao6(){
+    float horas = 0;
+    float minutos = 0;
+    float segundos = 0;
+    puts("Digite uma quantidade de horas: ");
+    scanf("%f",&horas);
+    puts("Digite uma quantidade de minutos: ");
+    scanf("%f",&minutos);
+    puts("Digite uma quantidade de segundos: ");
+    scanf("%f",&segundos);
+    minutos = minutos + horas*60;
+    segundos = segundos + minutos*60;
+    printf("Segundos totais: %f \n",segundos);
+
+}
+void questao7(){
+  int num = 0;
+  puts("Digite qualquer valor inteiro: ");
+  scanf("%d",&num);
+  num = num * num;
+  printf("Número ao quadrado: %d",num);
+}
+void questao8(){
+  int num = 0;
+  puts("Digite qualquer valor inteiro: ");
+  scanf("%d",&num);
+  int ant = num - 1;
+  int suc = num + 1;
+  printf("Antecessor: %d \n",ant);
+  printf("Sucessor: %d \n",suc);
+}
+void questao9(){
+  float largura = 0;
+  float altura = 0;
+  float comprimento = 0;
+  puts("Digite a largura");
+  scanf("%f",&largura);
+  puts("Digite a altura");
+  scanf("%f",&altura);
+  puts("Digite a comprimento");
+  scanf("%f",&comprimento);
+  float volume = largura * altura * comprimento;
+  printf("Volume total: %0.1f",volume);
+}
+void questao10(){
+    float real = 0;
+    float dolar = 0;
+    puts("Digite a cotacao atual do dólar");
+    scanf("%f",&dolar);
+    puts("Digite os reais que deseja converter");
+    scanf("%f",&real);
+    float dindin = real/dolar;
+    printf("Conversão de real pra dólar: %0.1f",dindin);
+}
+void questao11(){
+    int num1 = 0;
+    int num2 = 0;
+    puts("Digite um número qualquer");
+    scanf("%d",&num1);
+    puts("Digite outro número qualquer");
+    scanf("%d",&num2);
+    int soma = num1+num2;
+    int produto = num1*num2;
+    int diferenca = num1-num2;
+    int quociente = num1/num2;
+    int resto = num1%num2;
+    printf("Soma: %d \n",soma);
+    printf("Produto: %d \n",produto);
+    printf("Diferença: %d \n",diferenca);
+    printf("Quociente: %d \n",quociente);
+    printf("Resto: %d \n",resto);
+}
+void questao12(){
+    int a;
+    int b;
+    int c = 0;
+    puts("Digite um valor para A: ");
+    scanf("%d",&a);
+    puts("Digite um valor para B: ");
+    scanf("%d",&b);
+    printf("Valor antigo de \n");
+    printf("A = %d \n",a);
+    printf("B = %d \n",b);
+    c = a;
+    a = b;
+    b = c;
+    printf("Valor atual de \n");
+    printf("A = %d \n",a);
+    printf("B = %d \n",b);
+}
+void questao13(){
+    float celsius = 0;
+    puts("Digite o valor da temperatura(em Celsius): ");
+    scanf("%f",&celsius);
+    float fahrenheit = ((9*celsius) + 160)/5;
+    printf("Temperatura(em Fahrenheit) %f",fahrenheit);
+}
+void questao14(){
+    int dias = 0;
+    puts("Digite o número de dias trabalhados: ");
+    scanf("%d",&dias);
+    float dinheiro = 0;
+    if(dias <= 10){
+        float dinheiro_p = 50.25*dias;
+        float dinheiro = dinheiro_p - dinheiro_p*0.1;
+        printf("Dinheiro: %f",dinheiro);
+    }
+    else if(dias > 10 & dias <= 20){
+        float dinheiro_p = 50.25*dias;
+        float dinheiro = (dinheiro_p+(dinheiro_p*0.2))*0.9;
+        printf("Dinheiro: %f",dinheiro);
+    }
+    else if(dias > 20){
+        float dinheiro_p = 50.25*dias;
+        float dinheiro = (dinheiro_p+(dinheiro_p*0.3))*0.9;
+        printf("Dinheiro: %f",dinheiro);
+    }
+}
+void questao15(){
+    float sal_liquido;
+    float sal;
+    float hora_aula;
+    float horas;
+    float inss;
+    puts("Digite o valor da hora-aula");
+    scanf("%f",&hora_aula);
+    puts("Digite o numero de horas trabalhadas no mes");
+    scanf("%f",&horas);
+    puts("Digite o percentual de desconto do INSS (coloque valores entre 0.1 e 0.9)");
+    scanf("%f",&inss);
+    sal = horas * hora_aula;
+    sal_liquido = sal-(sal*inss);
+    printf("Salario bruto = %0.1f",sal);
+    printf("Salario liquido = %0.1f",sal_liquido);
+}
+void questao16(){
+    int num;
+    puts("Digite um numero inteiro qualquer");
+    scanf("%d",&num);
+    printf("Modulo de %d igual a = %d",num, abs(num));
+}
+void questao17(){
+    float pi = 3.14159;
+    float raio;
+    float diametro;
+    float circunferencia;
+    float area;
+    puts("Digite o valor do raio");
+    scanf("%f",&raio);
+    printf("Diametro = %f \n",diametro=raio*2);
+    printf("Valor da circunferencia = %f \n",circunferencia=2*pi*raio);
+    printf("Valor da area= %f \n",area=(pi*raio)*(pi*raio));
+}
+void questao18(){
+    printf("........    ...      .        .    \n");
+    printf(".      .   .   .    ...      . .   \n");
+    printf(".      .  .     .  .....    .   .  \n");
+    printf(".      .  .     .    .     .     . \n");
+    printf(".      .  .     .    .    .       .\n");
+    printf(".      .  .     .    .     .     . \n");
+    printf(".      .  .     .    .      .   .  \n");
+    printf(".      .   .   .     .       . .   \n");
+    printf("........    ...      .        .    \n");
+}
+void questao19(){
+    int num;
+    puts("Digite um numero inteiro qualquer");
+    scanf("%d",&num);
+    switch(num % 2){
+        case 1:
+            printf("Numero impar ");
+            break;
+        case 0:
+            printf("Numero par ");
+            break;
+        default:
+            printf("invalido ");
+            break;
+    }
+}
+void questao20(){
+    int num,num_dois;
+    puts("Digite um numero inteiro qualquer");
+    scanf("%d",&num);
+    puts("Digite um outro numero inteiro qualquer");
+    scanf("%d",&num_dois);
+    switch(num % num_dois){
+        case 1:
+            printf("Nao multiplo ");
+            break;
+        case 0:
+            printf("multiplo ");
+            break;
+        default:
+            printf("invalido ");
+            break;
+    }
+}
+void questao21(){
+    printf("Valor em inteiro de 'A':  %d \n",'A');
+    printf("Valor em inteiro de 'B':  %d \n",'B');
+    printf("Valor em inteiro de 'C':  %d \n",'C');
+    printf("Valor em inteiro de 'a':  %d \n",'a');
+    printf("Valor em inteiro de 'b':  %d \n",'b');
+    printf("Valor em inteiro de 'c':  %d \n",'c');
+    printf("Valor em inteiro de '0':  %d \n",'0');
+    printf("Valor em inteiro de '1':  %d \n",'1');
+    printf("Valor em inteiro de '2':  %d \n",'2');
+    printf("Valor em inteiro de '$':  %d \n",'$');
+    printf("Valor em inteiro de '*':  %d \n",'*');
+    printf("Valor em inteiro de '+':  %d \n",'+');
+    printf("Valor em inteiro de '/':  %d \n",'/');
+    printf("Valor em inteiro de ' ':  %d \n",' ');
+}
+void questao22(){
+    int num;
+    puts("Digite uma inteiro qualquer de tres algarismos");
+    scanf("%d",&num);
+    int cent = num/100;
+    int dez = (num/10) % 10;
+    int uni = num % 10;
+    int inverse = uni*100 + dez*10 + cent;
+    printf("Centena %d \n",cent);
+    printf("Dezena %d \n",dez);
+    printf("Unidades %d \n",uni);
+    printf("Numero invertido %d \n",inverse);
+}
+void questao23(){
+    int x,n,res;
+    puts("Digite um x qualquer");
+    scanf("%d",&x);
+    puts("Digite um n qualquer");
+    scanf("%d",&n);
+    res = x << n;
+    printf("resultado = %d ",res);
+}
+void questao24(){
+    int horas;
+    int min;
+    int seg;
+    puts("Digite uma quantidade qualquer de segundos");
+    scanf("%d",&seg);
+    min = seg/60;
+    horas = min/60;
+    printf("Quantidade em segundos: %d \n",seg);
+    printf("Quantidade em minutos: %d \n",min);
+    printf("Quantidade em horas: %d \n",horas);
+}
+void questao25(){
+    float x;
+    float y;
+    float x_um;
+    float y_um;
+    puts("Digite a coordenada do valor x nor primeiro ponto");
+    scanf("%f",&x);
+    puts("Digite a coordenada do valor y no primeiro ponto");
+    scanf("%f",&x);
+    puts("Digite a coordenada do valor x no segundo ponto");
+    scanf("%f",&x_um);
+    puts("Digite a coordenada do valor y no segundo ponto");
+    scanf("%f",&y_um);
+    float distancia = sqrt((x_um-x)*(x_um-x) + (y_um-y)*(y_um-y));
+    printf("Distância = %f",distancia);
+}
+void questao26(){
+     float num,num_um,num_dois;
+     puts("Digite o primeiro numero");
+     scanf("%f",&num);
+     puts("Digite o segundo numero");
+     scanf("%f",&num_um);
+     puts("Digite o terceiro numero");
+     scanf("%f",&num_dois);
+     float media_a = (num + num_um + num_dois)/3;
+     float media_g = pow(num * num_um * num_dois,1.0/3.0);
+     printf("Media aritmetica = %f \n",media_a);
+     printf("Media geometrica = %f \n",media_g);
+
+}
+int main()
+{
+    questao21();
+    return 0;
+}
